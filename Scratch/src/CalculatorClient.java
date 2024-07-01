@@ -13,7 +13,7 @@ class CalculatorClient {
 
         System.out.println(calc.randomInt(5,20));
 
-        System.out.println(calc.rand());
+        System.out.println("winner is " + calc.randomInt(25));// cals the "1-max" version
     }
 
 }

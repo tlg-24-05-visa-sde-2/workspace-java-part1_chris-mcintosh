@@ -3,10 +3,11 @@ class Song {
     private String songName; //default value when client doesn't specify one (instead of 0)
    private  double songLength;
    private Boolean isExplicit;
+   String artist;
 
     //functions or operations - these are called "methods" in Java
     public void play() {
-        System.out.println("Playing " + songName + " for the next " + songLength + " minutes");
+        System.out.println("Playing " + songName + " by the "+ artist + " for the next " + songLength + " minutes");
     }
 
 
@@ -42,5 +43,9 @@ class Song {
 
     public void setExplicit(Boolean explicit) {
         isExplicit = explicit;
+    }
+
+    public String toString(){
+        return "Song: name = " + songName + ", Length = " + songLength;
     }
 }

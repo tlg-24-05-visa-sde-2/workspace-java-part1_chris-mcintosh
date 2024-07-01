@@ -33,12 +33,22 @@ class Calculator {
         return randomInt;
     }
 
-    int rand(){
-        double rand = Math.random();
-        double scaled = (rand * 10) + 1;
-        double result = Math.round(scaled);
 
-        return (int) result;
+    /*
+     * Returns a random integer between 1 and 'max' (inclusive).
+     */
+
+    int randomInt(int max){
+        return randomInt(1, max); // delegate to "min-max" version, passing 1 and "max"
+    }
+
+    int randomInt(){
+        return randomInt(1, 10); //delegate to "min-max' version, passing 1 for min, 11 for max
+//        double randomInt = Math.random();
+//        double scaled = (rand * 10) + 1;
+//        double result = Math.round(scaled);
+//
+//        return (int) result;
 
     }
 }
