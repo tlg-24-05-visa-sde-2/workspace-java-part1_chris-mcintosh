@@ -10,13 +10,19 @@ class Television {
     //functions or operations - "methods"
     public void turnOn() {
         boolean isConnected = verifyInternetConnection();
-        System.out.println("Turning on your " + brand + " TV to volume " + volume);
+        System.out.println("Turning on your " + getBrand() + " TV to volume " + getVolume());
     }
 
     public void turnOff() {
         System.out.println("Shutting down...goodbye");
     }
 
+    private boolean verifyInternetConnection(){
+        return true;
+    }
+
+
+    // accessor methods - "getters, setters, toString"
     public String getBrand() {
         return brand;
     }
@@ -33,11 +39,7 @@ class Television {
         this.volume = volume;
     }
 
-    private boolean verifyInternetConnection(){
-        return true;
-    }
-
     public String toString(){
-        return "Television: brand = " + brand + ", volume = " + volume;
+        return "Television: brand = " + getBrand() + ", volume to " + getVolume();
     }
 }

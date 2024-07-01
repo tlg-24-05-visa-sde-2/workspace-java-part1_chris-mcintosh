@@ -31,7 +31,8 @@ class TelevisionClient {
 
         //toString
         System.out.println(tv1.toString());
-        System.out.println(tv1);
+        System.out.println(tv2);//toString method not necessary it is automatic once set
+        System.out.println(tv3);
 
     }
 }

@@ -20,7 +20,7 @@ class AlarmClock {
     //TODO: implement constraint  -  must be between 1 and 20 (inclusive)
     // if incoming value is "valid" we take it, i.e., assign to the private field
     public void setSnoozeInterval(int snoozeInterval) {
-        this.snoozeInterval = snoozeInterval;
+              this.snoozeInterval = snoozeInterval;
     }
 
     /*

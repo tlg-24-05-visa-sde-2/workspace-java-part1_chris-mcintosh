@@ -1,25 +1,26 @@
 class Song {
     // properties or attributes - these are called "instance variables" or "fields" in Java
-    private String songName; //default value when client doesn't specify one (instead of 0)
+    private String songName; //default value when client doesn't specify one (which in this instance will be null)
    private  double songLength;
    private Boolean isExplicit;
-   String artist;
+   private String artist;
 
-    //functions or operations - these are called "methods" in Java
+    //functions  - these are called " action methods" in Java
     public void play() {
-        System.out.println("Playing " + songName + " by the "+ artist + " for the next " + songLength + " minutes");
+        System.out.println("Playing " + getSongName() + " by the "+ getArtist() + " for the next " + getSongLength() + " minutes");
     }
 
 
    public void kidFriendly () {
-        System.out.println("Is " + songName + "Family Friendly = " + isExplicit);
+        System.out.println("Is " + getSongName() + "Family Friendly = " + getExplicit());
     }
 
    public void speedup () {
-        System.out.println(songName + " is now being sped up");
+        System.out.println(getSongName() + " is now being sped up");
     }
 
     // accessor methods - provide controlled access with validation checking to the objects fields
+    //getters and setters
 
     public String getSongName() {
         return songName;
@@ -45,7 +46,15 @@ class Song {
         isExplicit = explicit;
     }
 
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
     public String toString(){
-        return "Song: name = " + songName + ", Length = " + songLength;
+        return "Song: name = " + getSongName() + ", Length = " + getSongLength();
     }
 }

@@ -7,7 +7,7 @@ class SongClient {
         song1.setSongName("Hotel California");
         song1.setSongLength(6.30);
         song1.setExplicit(false);
-        song1.artist = "Eagles";
+        song1.setArtist("Eagles");
 
 
         //create a second alarm clock object and set its snoozeInterval, also
@@ -15,14 +15,14 @@ class SongClient {
         song2.setSongName("Highway to Hell");
         song2.setSongLength(3.27);
         song2.setExplicit(true);
-        song1.artist = "AC/DC";
+        song1.setArtist("AC/DC");
 
         //create a 3rd AlarmClock object, but this time DON'T give it a snooze interval
         Song song3 = new Song();
         song3.setSongName("Bohemian Rhapsody");
         song3.setSongLength (5.55);
         song3.setExplicit(false);
-        song1.artist = "Queen";
+        song1.setArtist("Queen");
 
 
         // make them snooze()
