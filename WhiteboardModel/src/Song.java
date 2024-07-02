@@ -5,6 +5,18 @@ class Song {
    private Boolean isExplicit;
    private String artist;
 
+      //constructors these get call when the client says "new"
+   public Song() {
+       //no-op
+   }
+    public Song(String songName, double songLength, Boolean isExplicit, String artist) {
+        this.setSongName(songName);
+        this.setSongLength(songLength);
+        this.setExplicit(isExplicit);
+        this.setArtist(artist);
+    }
+
+
     //functions  - these are called " action methods" in Java
     public void play() {
         System.out.println("Playing " + getSongName() + " by the "+ getArtist() + " for the next " + getSongLength() + " minutes");

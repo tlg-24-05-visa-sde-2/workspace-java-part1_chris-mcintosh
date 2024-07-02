@@ -7,6 +7,14 @@ class AlarmClock {
     // properties or attributes - these are called "instance variables" or "fields" in Java
   private int snoozeInterval = 5; //default value when client doesn't specify one (instead of 0)
 
+    // constructors- no argument constructor would default to AlarmClock() { }
+    public AlarmClock() {
+        //no-op
+    }
+    public AlarmClock(int snoozeInterval) {
+        setSnoozeInterval(snoozeInterval); // delegates to setter for validation/conversions (if any)
+    }
+
     //functions or operations - these are called "methods" in Java
     public void snooze() {
         System.out.println("Snoozing for " + snoozeInterval + " minutes");
