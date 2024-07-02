@@ -43,7 +43,8 @@ class Song {
     }
 
     public void setSongName(String songName) {
-        this.songName = songName;
+       if (songName == null) {this.songName = "No song choices made";} else {this.songName = songName;}
+
     }
 
     public double getSongLength() {
