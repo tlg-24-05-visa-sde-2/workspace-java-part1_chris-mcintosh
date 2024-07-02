@@ -5,8 +5,10 @@
 
 class AlarmClock {
     // properties or attributes - these are called "instance variables" or "fields" in Java
-  private int snoozeInterval = 5; //default value when client doesn't specify one (instead of 0)
 
+    private int snoozeInterval = 5; //default value when client doesn't specify one (instead of 0)
+public static final int MIN_INTERVAL = 1;
+public static final int MAX_INTERVAL = 20;
     // constructors- no argument constructor would default to AlarmClock() { }
     public AlarmClock() {
         //no-op
@@ -28,13 +30,19 @@ class AlarmClock {
     //TODO: implement constraint  -  must be between 1 and 20 (inclusive)
     // if incoming value is "valid" we take it, i.e., assign to the private field
     public void setSnoozeInterval(int snoozeInterval) {
-              this.snoozeInterval = snoozeInterval;
-    }
-
+        if (snoozeInterval >= MIN_INTERVAL && snoozeInterval <= MAX_INTERVAL) {
+            this.snoozeInterval = snoozeInterval;
+        }
+              else {
+            System.out.println("Invalid snooze interval: " + snoozeInterval + ". " +
+                    "Must be between " + MIN_INTERVAL + " and "+ MAX_INTERVAL + " (inclusive).");
+            }
+        }
     /*
      *Purpose: return a string (sentence) describing this object.
      */
     public String toString() {
         return "Alarm Clock: snoozeInterval= " + snoozeInterval + " minutes";
+        }
     }
-}
+

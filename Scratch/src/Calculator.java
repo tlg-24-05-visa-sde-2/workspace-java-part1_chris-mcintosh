@@ -1,18 +1,22 @@
+/*
+ * This is an all static class, i.e., it has nothing but static methods
+ */
+
 class Calculator {
 
-    double add(double a, double b) {
+   public static double add(double a, double b) {
         return a + b;
     }
 
-    double subtract(double a, double b) {
+    public static double subtract(double a, double b) {
         return a - b;
     }
 
-    double multiply(double a, double b) {
+   public static double multiply(double a, double b) {
         return a * b;
     }
 
-    boolean isEven(int value){
+   public static boolean isEven(int value){
         return (value % 2 == 0);
     }
 
@@ -28,7 +32,7 @@ class Calculator {
      * int
      */
 
-    int randomInt(int min, int max) {
+    public static int randomInt(int min, int max) {
         int randomInt = (int) (Math.random() * (max - min + 1)) + min;
         return randomInt;
     }
@@ -38,11 +42,11 @@ class Calculator {
      * Returns a random integer between 1 and 'max' (inclusive).
      */
 
-    int randomInt(int max){
+   public static int randomInt(int max){
         return randomInt(1, max); // delegate to "min-max" version, passing 1 and "max"
     }
 
-    int randomInt(){
+  public static int randomInt(){
         return randomInt(1, 10); //delegate to "min-max' version, passing 1 for min, 11 for max
 //        double randomInt = Math.random();
 //        double scaled = (rand * 10) + 1;

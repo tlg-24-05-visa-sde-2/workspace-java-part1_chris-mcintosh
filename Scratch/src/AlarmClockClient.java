@@ -15,14 +15,16 @@ class AlarmClockClient {
         //create a second alarm clock object and set its snoozeInterval, also
         AlarmClock clock2 = new AlarmClock(10);
 
-        //create a 3rd AlarmClock object, but this time DON'T give it a snooze interval
-        AlarmClock clock3 = new AlarmClock();
+        //create a 3rd AlarmClock object, and I want its snoozeInterval to be the largest possible
+        AlarmClock clock3 = new AlarmClock(AlarmClock.MAX_INTERVAL); //as long as possible please
 
 
         // make them snooze()
         clock1.snooze();
         clock2.snooze();
         clock3.snooze();
+        System.out.println();
+
         //show their toString() methods in action
         System.out.println(clock1.toString());
         System.out.println(clock2.toString());
