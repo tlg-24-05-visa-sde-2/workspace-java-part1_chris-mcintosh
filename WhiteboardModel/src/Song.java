@@ -9,6 +9,10 @@ class Song {
    public Song() {
        //no-op
    }
+
+   public Song (String songNAme){
+       this.setSongName(songName);
+   }
     public Song(String songName, double songLength, Boolean isExplicit, String artist) {
         this.setSongName(songName);
         this.setSongLength(songLength);
@@ -19,7 +23,7 @@ class Song {
 
     //functions  - these are called " action methods" in Java
     public void play() {
-        System.out.println("Playing " + getSongName() + " by the "+ getArtist() + " for the next " + getSongLength() + " minutes");
+        System.out.println("Playing " + getSongName() + " by "+ getArtist() + " for the next " + getSongLength() + " minutes");
     }
 
 
