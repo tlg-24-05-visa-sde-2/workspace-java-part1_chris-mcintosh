@@ -1,6 +1,6 @@
 class Song {
-    // properties or attributes - these are called "instance variables" or "fields" in Java
-    private String songName; //default value when client doesn't specify one (which in this instance will be null)
+    // "properties or attributes" - "instance variables" or "fields"
+    private String songName; //default value when client doesn't specify will be null
    private  double songLength;
    private Boolean isExplicit;
    private String artist;
@@ -23,7 +23,10 @@ class Song {
 
     //functions  - these are called " action methods" in Java
     public void play() {
-        System.out.println("Playing " + getSongName() + " by "+ getArtist() + " for the next " + getSongLength() + " minutes");
+        System.out.println("Playing " + getSongName() +
+                " by "+ getArtist() +
+                " for the next " +
+                getSongLength() + " minutes");
     }
 
 
@@ -41,9 +44,9 @@ class Song {
     public String getSongName() {
         return songName;
     }
-
+    //contains if else statement
     public void setSongName(String songName) {
-       if (songName == null) {this.songName = "No song choices made";} else {this.songName = songName;}
+       if (songName == null) {songName = "No song choices made";} else {this.songName = songName;}
 
     }
 
@@ -51,8 +54,12 @@ class Song {
         return songLength;
     }
 
+    //contains if else statement
     public void setSongLength(double songLength) {
-        this.songLength = songLength;
+       if (songLength < 0) {
+           System.out.println("Error: Song length cannot be negative");
+       } else {this.songLength = songLength;}
+
     }
 
     public Boolean getExplicit() {
@@ -72,6 +79,9 @@ class Song {
     }
 
     public String toString(){
-        return "Song: name = " + getSongName() + ", Length = " + getSongLength();
+        return "Song: name = " +
+                getSongName() + " by "+
+                getArtist() +
+                ", Song Length = " + getSongLength() + " minutes";
     }
 }

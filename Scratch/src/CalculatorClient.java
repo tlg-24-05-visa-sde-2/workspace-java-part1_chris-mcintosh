@@ -12,7 +12,7 @@ class CalculatorClient {
 
         System.out.println(Calculator.randomInt(5,20));
 
-        System.out.println("winner is " + Calculator.randomInt(25));// cals the "1-max" version
+        System.out.println("winner is " + Calculator.randomInt(5, 16));// calls the min, max version
     }
 
 }

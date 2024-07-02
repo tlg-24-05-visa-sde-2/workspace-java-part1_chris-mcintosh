@@ -19,6 +19,8 @@ class Television {
     // properties or attributes - "fields" or "instance variables"
     private String brand = "Toshiba"; //brand name
     private int volume = 1; //current volume
+    private int originalVolume;
+    private boolean isMuted = false;
 
     //Constructors
     public Television (){
@@ -43,6 +45,7 @@ class Television {
         System.out.println("Shutting down...goodbye");
     }
 
+
     private boolean verifyInternetConnection(){
         return true;
     }
@@ -54,7 +57,19 @@ class Television {
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        if (brand.equals("Toshiba") ||
+                brand.equals ("Sony") ||
+                brand.equals ("APPLE") ||
+                brand.equals ("Spectre")||
+                brand.equals ("Samsung") ||
+                brand.equals ("LG"))
+        {
+            this.brand = brand;
+        }
+       else {
+            System.out.println("Error: Brand must be Toshiba, Sony, Samsung, LG, or Samsung");
+
+        }
     }
 
     public int getVolume() {
@@ -62,15 +77,34 @@ class Television {
     }
 
     public void setVolume(int volume) {
+        if (volume < MIN_VOLUME || volume > MAX_VOLUME){
+            System.out.println("Error: Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME);
+        }
+        else {
         this.volume = volume;
+        }
     }
-
 
     public static void setInstanceCount(int instanceCount) {
         Television.instanceCount = instanceCount;
     }
 
+    public void mute() {
+        if (!isMuted) {
+            originalVolume = volume;
+            setVolume(MIN_VOLUME);
+            isMuted = true;
+            System.out.println("Is muted");
+        }
+        else {
+            volume = originalVolume;
+            isMuted = false;
+            System.out.println("Is un-muted");
+        }
+    }
+
     public String toString(){
+
         return "Television: brand = " + getBrand() + ", volume to " + getVolume();
     }
 }

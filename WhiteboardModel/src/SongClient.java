@@ -26,10 +26,13 @@ class SongClient {
         System.out.println();
 
         // Using the 4-line constructor
-        Song song4 = new Song("what a wonderful world", 2.21, true, "Louis Armstrong");
-        System.out.println(song4);
+        Song song4 = new Song("what a wonderful world",
+                2.21, true, "Louis Armstrong");
 
-        // Using the 1-line constructor
+        // Using the 1-line constructor that contains an if else statement
+        Song song5 = new Song();
+        System.out.println(song5);
+        System.out.println();
 
 
 
