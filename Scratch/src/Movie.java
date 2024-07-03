@@ -1,10 +1,11 @@
 class Movie {
     // fields or instance variables
     private String title;
-    private int releaseYear;
-    private double revenue;
+    private Integer releaseYear;
+    private Double revenue;
     private Rating rating;
     private Genre genre;
+
     //constructors these get call when the client says "new"
        public Movie(String title) {
         setTitle(title);
@@ -14,11 +15,12 @@ class Movie {
            this(title);
            setGenre(genre);
     }
-    public Movie(String title, int releaseYear, double revenue, Genre genre, Rating rating) {
+    public Movie(String title, Integer releaseYear, Double revenue, Genre genre, Rating rating) {
         this(title, genre);                  //delegate to 2 argument constructor
         setReleaseYear(releaseYear);         // handle the rest of them myself
         setRevenue(revenue);
         setGenre(genre);
+        setRating(rating);
 
     }
 
@@ -34,19 +36,19 @@ class Movie {
         this.title = title;
     }
 
-    public int getReleaseYear() {
+    public Integer getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 
-    public double getRevenue() {
+    public Double getRevenue() {
         return revenue;
     }
 
-    public void setRevenue(double revenue) {
+    public void setRevenue(Double revenue) {
         this.revenue = revenue;
     }
 
