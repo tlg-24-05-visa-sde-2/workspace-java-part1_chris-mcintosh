@@ -18,10 +18,7 @@ class TelevisionClient {
 
 
        //create a Television objects using constants
-       Television tv3 = new Television("LG", Television.MAX_VOLUME);
-       Television tv4 = new Television("Spectre", Television.MIN_VOLUME);
-       Television tv5 = new Television("APPLE", Television.MAX_VOLUME);
-
+       Television tv3 = new Television("LG", Television.MAX_VOLUME); // CRANK IT UP
 
        // turn them on
         tv1.turnOn();
@@ -39,7 +36,6 @@ class TelevisionClient {
         System.out.println(tv1.toString());
         System.out.println(tv2);//toString method not necessary it is automatic once set
         System.out.println(tv3);
-        System.out.println(tv4);
         System.out.println();
 
         System.out.println(Television.getInstanceCount() + " instances");

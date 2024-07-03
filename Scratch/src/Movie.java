@@ -70,10 +70,15 @@ class Movie {
 
     //To string
       public String toString() {
-        return "This movies title: " + getTitle() +
-                ", release year: " + getReleaseYear() +
-                ", revenue= " + getRevenue() +
-                ", genre= " + getGenre() +
-                ", rating= " + getRating();
+           //TODO : make it right, so that a null revenue shows up as null,
+          // and a non-null revenue shows up as the corrected format.
+          //HINT: if revenue is null use %s otherwise use %,.2f
+          return String.format("Movie: title=%s, releaseYear=%s, revenue=$%,.2f, rating=%s, genre=%s",
+                  getTitle(), getReleaseYear(), getRevenue(), getRating(), getGenre());
+          //                  "This movies title: " + getTitle() +
+//                  ", release year: " + getReleaseYear() +
+//                  ", revenue= " + getRevenue() +
+//                  ", genre= " + getGenre() +
+//                  ", rating= " + getRating();
     }
 }
