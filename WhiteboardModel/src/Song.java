@@ -89,6 +89,8 @@ class Song {
         return "Song: name = " +
                 getSongName() + " by "+
                 getArtist() +
-                ", Song Length = " + getSongLength() + " minutes";
+                ", Song Length = " + getSongLength() + " minutes" +
+                ", isExplicit = " + getExplicit() +
+                ", Genre = " + getGenre();
     }
 }
