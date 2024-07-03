@@ -23,7 +23,7 @@ class DateTimeTest {
      */
     public static void main(String[] args) {
         // testNow();
-        // testCreate();
+         testCreate();
         // testParse();
         // testFormat();
     }
@@ -32,17 +32,29 @@ class DateTimeTest {
      * TASK: create current date, time, and date-time via now() and then print them.
      */
     public static void testNow() {
-        // TODO
+        LocalDateTime today = LocalDateTime.now();
+        System.out.println(today);
+        System.out.println();
+
+        LocalDateTime now = LocalDateTime.now().withNano(0);
+        System.out.println(now);
+        System.out.println();
+
+        LocalDateTime now2 = LocalDateTime.now();
     }
 
     /**
      * TASK: implement the TODOs and print your results.
      */
     public static void testCreate() {
-        // TODO: create your birthday via of(). What day of the week were you born on?
+        // create your birthday via of(). What day of the week were you born on?
+        LocalDate bday = LocalDate.of(1997, 02, 13);
+        System.out.println(bday.getDayOfWeek());
 
         // TODO: use of() to create a value representing the 1st lunar landing - it happened on 7/20/69 at 3:18pm Eastern Time.
         // NOTE: ignore time-zone, just assume Eastern Time is the local time.
+        LocalDateTime moonLanding = LocalDateTime.of (1969, 7, 20, 15, 18);
+        System.out.println(moonLanding);
     }
 
     /**

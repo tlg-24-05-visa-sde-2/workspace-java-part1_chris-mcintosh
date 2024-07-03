@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 class MovieClient {
 
     public static void main(String[] args) {
@@ -19,6 +21,8 @@ class MovieClient {
         movie3.setRevenue(770_000_000.90); // remember this is a double
         System.out.println(movie3);
         System.out.println();
+
+
 
     }
 
