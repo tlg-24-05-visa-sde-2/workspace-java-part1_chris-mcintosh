@@ -1,0 +1,3 @@
+enum Genre {
+    RAP, ROCK, POP, CLASSICAL, COUNTRY
+}

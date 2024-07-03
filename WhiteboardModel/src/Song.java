@@ -4,20 +4,18 @@ class Song {
    private  double songLength;
    private Boolean isExplicit;
    private String artist;
+   private Genre genre;
 
       //constructors these get call when the client says "new"
-   public Song() {
-       //no-op
-   }
-
-   public Song (String songNAme){
+     public Song (String songNAme){
        this.setSongName(songName);
    }
-    public Song(String songName, double songLength, Boolean isExplicit, String artist) {
+    public Song(String songName, double songLength, Boolean isExplicit, String artist, Genre genre) {
         this.setSongName(songName);
         this.setSongLength(songLength);
         this.setExplicit(isExplicit);
         this.setArtist(artist);
+        setGenre(genre);
     }
 
 
@@ -46,7 +44,7 @@ class Song {
     }
     //contains if else statement
     public void setSongName(String songName) {
-       if (songName == null) {songName = "No song choices made";} else {this.songName = songName;}
+      this.songName = songName;
 
     }
 
@@ -78,6 +76,15 @@ class Song {
         this.artist = artist;
     }
 
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    // To string
     public String toString(){
         return "Song: name = " +
                 getSongName() + " by "+

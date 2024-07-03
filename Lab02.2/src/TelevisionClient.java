@@ -13,9 +13,9 @@ class TelevisionClient {
        tv1.setBrand("Samsung");;
        tv1.setVolume(32);
 
-       Television tv2 = new Television();
-       tv2.setBrand("Sony");
-       tv2.setVolume(50);
+       Television tv2 = new Television("Sony", 50, DisplayType.OLED);
+
+
 
        //create a Television objects using constants
        Television tv3 = new Television("LG", Television.MAX_VOLUME);
@@ -26,11 +26,13 @@ class TelevisionClient {
        // turn them on
         tv1.turnOn();
         tv2.turnOn();
+        tv3.turnOn();
         System.out.println();
 
         //turn them  off
         tv1.turnOff();
         tv2.turnOff();
+        tv3.turnOff();
         System.out.println();
 
         //toString

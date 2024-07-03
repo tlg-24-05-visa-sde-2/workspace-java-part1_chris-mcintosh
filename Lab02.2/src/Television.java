@@ -20,6 +20,7 @@ class Television {
     private String brand = "Toshiba"; //brand name
     private int volume = 1; //current volume
     private int originalVolume;
+    private DisplayType display = DisplayType.LED;
     private boolean isMuted = false;
 
     //Constructors
@@ -33,6 +34,11 @@ class Television {
     public Television(String brand, int volume){
         this(brand);
         setVolume(volume);
+    }
+
+    public Television(String brand, int volume, DisplayType display){
+        this(brand, volume);
+        setDisplay(display);
     }
 
     //functions or operations - "methods"
@@ -85,6 +91,14 @@ class Television {
         }
     }
 
+    public DisplayType getDisplay() {
+        return display;
+    }
+
+    public void setDisplay(DisplayType display) {
+        this.display = display;
+    }
+
     public static void setInstanceCount(int instanceCount) {
         Television.instanceCount = instanceCount;
     }
@@ -103,8 +117,12 @@ class Television {
         }
     }
 
+
+
+    // To String
     public String toString(){
 
-        return "Television: brand = " + getBrand() + ", volume to " + getVolume();
+        return "Television: brand = " + getBrand() + ", volume to " + getVolume() +
+                ", display = " + getDisplay() + ", isMuted = " + isMuted;
     }
 }
