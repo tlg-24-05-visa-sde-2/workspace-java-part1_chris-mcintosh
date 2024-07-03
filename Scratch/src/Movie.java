@@ -3,17 +3,23 @@ class Movie {
     private String title;
     private int releaseYear;
     private double revenue;
-    private String genre;
-
+    private Rating rating;
+    private Genre genre;
     //constructors these get call when the client says "new"
-    public Movie() {
-        //no-op
+       public Movie(String title) {
+        setTitle(title);
     }
-    public Movie(String title, int releaseYear, double revenue, String genre) {
-        this.setTitle(title);
-        this.setReleaseYear(releaseYear);
-        this.setRevenue(revenue);
-        this.setGenre(genre);
+
+    public Movie (String title, Genre genre) {
+           this(title);
+           setGenre(genre);
+    }
+    public Movie(String title, int releaseYear, double revenue, Genre genre, Rating rating) {
+        this(title, genre);                  //delegate to 2 argument constructor
+        setReleaseYear(releaseYear);         // handle the rest of them myself
+        setRevenue(revenue);
+        setGenre(genre);
+
     }
 
     //business or action methods
@@ -44,18 +50,28 @@ class Movie {
         this.revenue = revenue;
     }
 
-    public String getGenre() {
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public Genre getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
+    //To string
       public String toString() {
         return "This movies title: " + getTitle() +
                 ", release year: " + getReleaseYear() +
                 ", revenue= " + getRevenue() +
-                ", genre= " + getGenre();
+                ", genre= " + getGenre() +
+                ", rating= " + getRating();
     }
 }
