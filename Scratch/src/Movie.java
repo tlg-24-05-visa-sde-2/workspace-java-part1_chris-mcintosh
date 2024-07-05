@@ -7,14 +7,15 @@ class Movie {
     private Genre genre;
 
     //constructors these get call when the client says "new"
-       public Movie(String title) {
+    public Movie(String title) {
         setTitle(title);
     }
 
-    public Movie (String title, Genre genre) {
-           this(title);
-           setGenre(genre);
+    public Movie(String title, Genre genre) {
+        this(title);
+        setGenre(genre);
     }
+
     public Movie(String title, Integer releaseYear, Double revenue, Genre genre, Rating rating) {
         this(title, genre);                  //delegate to 2 argument constructor
         setReleaseYear(releaseYear);         // handle the rest of them myself
@@ -69,16 +70,19 @@ class Movie {
     }
 
     //To string
-      public String toString() {
-           //TODO : make it right, so that a null revenue shows up as null,
-          // and a non-null revenue shows up as the corrected format.
-          //HINT: if revenue is null use %s otherwise use %,.2f
-          return String.format("Movie: title=%s, releaseYear=%s, revenue=$%,.2f, rating=%s, genre=%s",
-                  getTitle(), getReleaseYear(), getRevenue(), getRating(), getGenre());
-          //                  "This movies title: " + getTitle() +
+    public String toString() {
+        // Check if revenue is null
+        if (getRevenue() == null) {
+            return String.format("Movie: title=%s, releaseYear=%s, revenue=%s, rating=%s, genre=%s",
+                    getTitle(), getReleaseYear(), "null", getRating(), getGenre());
+        } else {
+            return String.format("Movie: title=%s, releaseYear=%s, revenue=$%,.2f, rating=%s, genre=%s",
+                    getTitle(), getReleaseYear(), getRevenue(), getRating(), getGenre());
+            //                  "This movies title: " + getTitle() +
 //                  ", release year: " + getReleaseYear() +
 //                  ", revenue= " + getRevenue() +
 //                  ", genre= " + getGenre() +
 //                  ", rating= " + getRating();
+        }
     }
 }
