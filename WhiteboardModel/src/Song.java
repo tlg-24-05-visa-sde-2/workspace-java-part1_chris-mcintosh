@@ -29,7 +29,7 @@ class Song {
 
 
    public void kidFriendly () {
-        System.out.println("Is " + getSongName() + "Family Friendly = " + getExplicit());
+        System.out.println("Is " + getSongName() + " Family Friendly = " + getExplicit());
     }
 
    public void speedup () {

@@ -2,37 +2,23 @@ class SongClient {
 
     // starting point or "entry" point for every standalone Java application
     public static void main(String[] args) {
-        //create an instance (or object) of AlarmClock and set its snoozeInterval
+        //create an instance (or object)
         Song song1 = new Song("Hotel California");
         song1.setSongLength(6.30);
         song1.setExplicit(false);
         song1.setArtist("Eagles");
         song1.setGenre(Genre.POP);
 
+        //Song 2  creating an instance strictly from constructors
+        Song song2 = new Song("Highway to Hell", 3.27, true, "AC/DC", Genre.ROCK);
 
-        //create a second alarm clock object and set its snoozeInterval, also
-        Song song2 = new Song("Highway to Hell");
-        song2.setSongLength(3.27);
-        song2.setExplicit(true);
-        song2.setArtist("AC/DC");
-        song2.setGenre(Genre.ROCK);
-
-        //create a 3rd AlarmClock object, but this time DON'T give it a snooze interval
-        Song song3 = new Song("Bohemian Rhapsody");
-        song3.setSongLength (5.55);
-        song3.setExplicit(false);
-        song3.setArtist("Queen");
+        //Song 3
+       Song song3 = new Song("Bohemian Rhapsody", 5.55, false, "Queen", Genre.ROCK);
         System.out.println();
 
         // Using the 4-line constructor
         Song song4 = new Song("what a wonderful world",
                 2.21, true, "Louis Armstrong", Genre.CLASSICAL);
-
-        // Using the 1-line constructor that contains an if else statement
-//        Song song5 = new Song();
-//        System.out.println(song5);
-//        System.out.println();
-
 
 
         // make them play and find out kid friendly()
@@ -48,7 +34,8 @@ class SongClient {
         song4.kidFriendly();
         System.out.println();
 
-        //showing toString
+        //showing toString with or without the "toString"
         System.out.println(song1.toString());
+        System.out.println(song2);
     }
 }
