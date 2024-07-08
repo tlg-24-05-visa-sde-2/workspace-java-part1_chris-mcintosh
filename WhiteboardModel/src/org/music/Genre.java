@@ -1,4 +1,6 @@
-enum Genre {
+package org.music;
+
+public enum Genre {
     // Added the display function to get the string returns that we want
     RAP("Rap"),
     ROCK("Rock"),
@@ -15,6 +17,7 @@ enum Genre {
         this.output = output;
 
     }
+
     public String getDisplay() {
         return output;
     }

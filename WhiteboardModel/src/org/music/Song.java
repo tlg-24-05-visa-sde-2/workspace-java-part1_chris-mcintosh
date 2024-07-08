@@ -1,23 +1,26 @@
-class Song {
+package org.music;
+
+public class Song {
     // "properties or attributes" - "instance variables" or "fields"
     private String songName; //default value when client doesn't specify will be null
-   private  double songLength;
-   private Boolean isExplicit;
-   private String artist;
-   private Genre genre;
+    private double songLength;
+    private Boolean isExplicit;
+    private String artist;
+    private Genre genre;
 
-      //constructors these get call when the client says "new"
-     public Song (String songNAme){
-       this.setSongName(songName);
-   }
+    //constructors these get call when the client says "new"
+    public Song(String songName) {
+        this.setSongName(songName);
+    }
 
-   public Song (String songName, double songLength, String artist, Genre genre){
-         this.setSongName(songName);
-         this.setSongLength(songLength);
-         this.setArtist(artist);
-         this.setGenre(genre);
+    public Song(String songName, double songLength, String artist, Genre genre) {
+        this.setSongName(songName);
+        this.setSongLength(songLength);
+        this.setArtist(artist);
+        this.setGenre(genre);
 
-   }
+    }
+
     public Song(String songName, double songLength, Boolean isExplicit, String artist, Genre genre) {
         this.setSongName(songName);
         this.setSongLength(songLength);
@@ -30,17 +33,17 @@ class Song {
     //functions  - these are called " action methods" in Java
     public void play() {
         System.out.println("Playing " + getSongName() +
-                " by "+ getArtist() +
+                " by " + getArtist() +
                 " for the next " +
                 getSongLength() + " minutes");
     }
 
 
-   public void kidFriendly () {
+    public void kidFriendly() {
         System.out.println("Is " + getSongName() + " Family Friendly = " + getExplicit());
     }
 
-   public void speedup () {
+    public void speedup() {
         System.out.println(getSongName() + " is now being sped up");
     }
 
@@ -50,9 +53,10 @@ class Song {
     public String getSongName() {
         return songName;
     }
+
     //contains if else statement
     public void setSongName(String songName) {
-      this.songName = songName;
+        this.songName = songName;
 
     }
 
@@ -62,9 +66,11 @@ class Song {
 
     //contains if else statement
     public void setSongLength(double songLength) {
-       if (songLength < 0) {
-           System.out.println("Error: Song length cannot be negative");
-       } else {this.songLength = songLength;}
+        if (songLength < 0) {
+            System.out.println("Error: Song length cannot be negative");
+        } else {
+            this.songLength = songLength;
+        }
 
     }
 
@@ -93,9 +99,9 @@ class Song {
     }
 
     // To string
-    public String toString(){
+    public String toString() {
         return "Song: name = " +
-                getSongName() + " by "+
+                getSongName() + " by " +
                 getArtist() +
                 ", Song Length = " + getSongLength() + " minutes" +
                 ", isExplicit = " + getExplicit() +

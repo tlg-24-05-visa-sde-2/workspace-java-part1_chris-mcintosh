@@ -1,3 +1,7 @@
+package org.music.client;
+
+import org.music.Genre;
+import org.music.Song;
 
 class SongClientArgs {
     public static void main(String[] args) {
@@ -18,7 +22,7 @@ class SongClientArgs {
         String artist = args[2];
         Genre genre = Genre.valueOf(args[3].toUpperCase());
         // STEP 2: create and instance for Television for these converted values
-        Song song = new Song( songName, songLength, artist, genre);
+        Song song = new Song(songName, songLength, artist, genre);
         //STEP 3 : Print it and congratulate them on their order
         System.out.println("Here is your new song!!");
         System.out.println(song);
