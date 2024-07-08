@@ -1,4 +1,4 @@
-/*
+package edu.math;/*
  * Focused on testing random integers
  */
 
