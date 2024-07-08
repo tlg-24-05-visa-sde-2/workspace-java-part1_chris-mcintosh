@@ -7,16 +7,16 @@ enum Genre {
     COUNTRY("Country");
 
     //everything under here is just regular class definition stuff, i.e., fields, conductors, methods
-    private String display;
+    private String output;
 
     // implicitly private, no "new" from outside
-    Genre(String display) {
+    Genre(String output) {
         System.out.println("Genre ctor called");
-        this.display = display;
+        this.output = output;
 
     }
     public String getDisplay() {
-        return display;
+        return output;
     }
 
     public String toString() {

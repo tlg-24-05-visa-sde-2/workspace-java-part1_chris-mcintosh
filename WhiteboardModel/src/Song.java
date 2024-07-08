@@ -10,6 +10,14 @@ class Song {
      public Song (String songNAme){
        this.setSongName(songName);
    }
+
+   public Song (String songName, double songLength, String artist, Genre genre){
+         this.setSongName(songName);
+         this.setSongLength(songLength);
+         this.setArtist(artist);
+         this.setGenre(genre);
+
+   }
     public Song(String songName, double songLength, Boolean isExplicit, String artist, Genre genre) {
         this.setSongName(songName);
         this.setSongLength(songLength);

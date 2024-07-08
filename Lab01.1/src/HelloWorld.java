@@ -1,6 +1,6 @@
 /*
  * Classic Hello World application in Java
- * This is a stand alone application, i.e., it does not run on an app server.
+ * This is a standalone application, i.e., it does not run on an app server.
  */
 class HelloWorld {
 
