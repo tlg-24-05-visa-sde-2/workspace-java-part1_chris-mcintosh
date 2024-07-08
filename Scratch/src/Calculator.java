@@ -19,6 +19,17 @@ class Calculator {
         return (value % 2 == 0);
     }
     /*
+     * Returns the average of the supplied  integers.
+     * WATCH OUT: the client caller can pass in zero or more ints
+     */
+    public static double average(int first, int... rest) {
+        int sum = first;
+        for (int value : rest) {
+           sum = sum + value;
+        }
+        return (double) sum / (rest.length + 1);
+    }
+    /*
      * Returns a random integer between 1 and 11 (inclusive).
      */
     public static int randomInt(int min, int max) {

@@ -10,9 +10,19 @@ class CalculatorClient {
 
         System.out.println("10 is even?" + Calculator.isEven(10));
 
+        System.out.println();
+
         System.out.println(Calculator.randomInt(5,20));
 
+        System.out.println();
+
         System.out.println("winner is " + Calculator.randomInt(5, 16));// calls the min, max version
+
+        System.out.println();
+
+        System.out.println("average is " + Calculator.average(2,2));
+        System.out.println("average of a single number 12 is: " + Calculator.average(12));
+
     }
 
 }
