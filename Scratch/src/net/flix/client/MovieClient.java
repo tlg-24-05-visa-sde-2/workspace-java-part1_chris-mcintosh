@@ -7,7 +7,7 @@ import net.flix.Rating;
 class MovieClient {
 
     public static void main(String[] args) {
-         Movie movie1 = new Movie("Dune");
+        Movie movie1 = new Movie("Dune");
         movie1.setReleaseYear(2021);
         movie1.setRevenue(407_000_000.0);
         movie1.setRating(Rating.PG_13);
