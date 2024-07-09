@@ -21,7 +21,11 @@ public class Television {
     public static final int MAX_VOLUME = 100;
     public static final String[] VALID_BRANDS = { "Samsung", "LG", "Sony", "Toshiba" };
 
+    // Television HAS-A Tuner (a component part)
+    private Tuner tuner = new Tuner();  //instantiated, NOT exposed
+
     private static int instanceCount = 0;
+
 
     public static int getInstanceCount() {
         return instanceCount;
@@ -53,7 +57,17 @@ public class Television {
         setDisplay(display);
     }
 
+
+
     // BUSINESS METHODS (functions) - what operations can com.entertainment.Television objects do?
+    public void changeChannel (String channel) {
+        tuner.setChannel(channel);  // delegate to contained Tuner object
+    }
+
+    public String getCurrentChannel () {
+        return tuner.getChannel();
+    }
+
     public void turnOn() {
         boolean isConnected = verifyInternetConnection();
         System.out.println("Turning on your " + brand + " television to volume " + volume);
@@ -121,6 +135,7 @@ public class Television {
         return "com.entertainment.Television" +
                 ": brand=" + getBrand() +
                 ", volume=" + getVolume() +
-                ", display=" + getDisplay();
+                ", display=" + getDisplay() +
+                ", Channel=" + getCurrentChannel();
     }
 }

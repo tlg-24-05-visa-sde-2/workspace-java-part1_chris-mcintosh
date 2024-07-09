@@ -11,6 +11,7 @@ package com.entertainment.client;
 import com.entertainment.DisplayType;
 import com.entertainment.Television;
 
+
 class TelevisionClient {
   
     public static void main(String[] args) {
@@ -18,7 +19,10 @@ class TelevisionClient {
         System.out.println(tv);
         
         // TODO: change the channel
+        tv.changeChannel("FS1");
         
         System.out.println(tv);
+
+
     }
 }
