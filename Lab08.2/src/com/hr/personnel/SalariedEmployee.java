@@ -18,6 +18,16 @@ public class SalariedEmployee extends Employee {
         this.setSalary(salary);
     }
 
+    //"action" or business methods
+    @Override
+    public void pay(){
+        System.out.println(getName() + " gets paid " + getSalary() + " every year");
+    }
+
+    public void takeVacation(){
+        System.out.println(getName() + " is on vacation");
+    }
+
     //Accessor methods
     public double getSalary() {
         return salary;
@@ -28,11 +38,8 @@ public class SalariedEmployee extends Employee {
     }
 
     //ToString
-
     @Override
     public String toString() {
-        return super.toString()
-                + "SalariedEmployee [salary=" + getSalary() + "]" +
-                "\n\tName: " + getName() + "\n\tDate: " + getHireDate() + "\n";
+        return super.toString() + ", salary = " + getSalary();
     }
 }

@@ -21,7 +21,7 @@ import java.time.LocalDate;
  *   void work()        simulates work by printing a message to show it was called.
  *   String toString()  self-explanatory.
  */
-public class Employee {
+public abstract class Employee {
     // fields
     private String name;
     private LocalDate hireDate;
@@ -36,9 +36,18 @@ public class Employee {
     }
 
     // business methods
+    //ALL employees work(), so the method goes up here
+    //They all work() the same way sow we code it up here too
+    //It's inherited by both subclasses, NOT overridden
     public void work() {
         System.out.println(getName() + " working hard since " + getHireDate());
     }
+
+    //ALL employees get paid so the method goes up here
+    //BUT they don't all do it the same way - SE is fixed. HE is rate * hours
+    //We need a way to say THAT "all employees get paid," BUT we dont know HOW(up here).
+    //All we have is name and hireDate we cant get the dollar figure
+    public abstract void pay();
 
     // accessor methods
     public String getName() {
@@ -61,4 +70,5 @@ public class Employee {
     public String toString() {
         return "Employee: name=" + getName() + ", hireDate=" + getHireDate();
     }
+
 }

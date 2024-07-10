@@ -52,12 +52,43 @@ public class Department {
         for (int i = 0; i < currentIndex; i++) {
             employees[i].work();
         }
+            }
+
+    public void payEmployees() {
+        for (int i = 0; i < currentIndex; i++) {
+            employees[i].pay();
+        }
+    }
+
+    /*
+     * Office closure, all employees that take vacation are asked to do so.
+     * HINT if a given employee is actually a salaried employee than make them do it
+     * Otherwise there is nothing to do
+     */
+
+    public void HolidayBreak(){
+               for (int i = 0; i < currentIndex; i++) {
+            if (employees[i] instanceof SalariedEmployee semp){
+                //"downcast" the Employee reference employees[i] to more specific type SE
+                //We needed to do this in order to call SalariedEmployee-specific methods
+
+                semp.takeVacation();
+
+                //SalariedEmployee semp = (SalariedEmployee)employees[i];
+                //semp.takeVacation();
+
+                //downcast-and-method-call in one shot
+               // ((SalariedEmployee) employees[i]).takeVacation();
+            }
+        }
     }
 
     // helper method to add an Employee to the array
     public void addEmployee(Employee emp) {
         employees[currentIndex++] = emp;
     }
+
+
 
     // accessor methods
     public String getName() {
@@ -76,7 +107,8 @@ public class Department {
         this.location = location;
     }
 
+    @Override
     public String toString() {
-        return "Department: name=" + getName() + ", location=" + getLocation();
+        return getClass().getSimpleName() + ": name=" + getName() + ", location=" + getLocation();
     }
 }
